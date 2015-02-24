@@ -11,7 +11,7 @@
             "email": "EAnushan@hotmail.com"
         }
     ],
-	"minimum-stability": "stable",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "EAnushan\\validators\\": ""
