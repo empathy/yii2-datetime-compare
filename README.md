@@ -6,10 +6,10 @@ DateTime comparison validator for Yii Framework 2.0.
 ```php
 [
     // validates if the value of "birthday" attribute equals to that of "birthday_repeat"
-    ['birthday', 'compare'],
+    ['birthday', DateTimeCompareValidator::className()],
 
     // validates if birthday is less than or equal to today
-    ['birthday', 'compare', 'compareValue' => date('Y-m-d H:i:s'), 'operator' => '<='],
+    ['birthday', DateTimeCompareValidator::className(), 'compareValue' => date('Y-m-d H:i:s'), 'operator' => '<='],
 ]
 ```
 
