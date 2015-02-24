@@ -32,3 +32,23 @@ is as specified by the `operator` property.
      * `>=`: check if value being validated is greater than or equal to the value being compared with.
      * `<`: check if value being validated is less than the value being compared with.
      * `<=`: check if value being validated is less than or equal to the value being compared with.
+
+## Installation
+
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+
+> Note: Check the [composer.json](https://github.com/EAnushan/yii2-datetime-compare/blob/master/composer.json) for this extension's requirements and dependencies. 
+
+Either run
+
+```
+$ php composer.phar require EAnushan/yii2-datetime-compare "dev-master"
+```
+
+or add
+
+```
+"EAnushan/yii2-datetime-compare": "dev-master"
+```
+
+to the ```require``` section of your `composer.json` file.
