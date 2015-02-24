@@ -1,5 +1,5 @@
 {
-    "name": "EAnushan/yii2-datetime-compare",
+    "name": "eanushan/yii2-datetime-compare",
     "description": "DateTime comparison validator",
     "keywords": ["yii2", "extension", "widget", "form", "datetime", "plugin"],
     "homepage": "https://github.com/EAnushan/yii2-datetime-compare",
