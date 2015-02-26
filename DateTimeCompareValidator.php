@@ -1,17 +1,10 @@
 <?php
-/**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
-
 namespace EAnushan\validators;
 
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 use yii\validators\Validator;
-use yii\validators\ValidationAsset;
 
 /**
  * DateTimeCompareValidator compares the specified attribute value with another value.
@@ -46,13 +39,6 @@ class DateTimeCompareValidator extends Validator
      * @see compareAttribute
      */
     public $compareValue;
-    /**
-     * @var string the type of the values being compared. The follow types are supported:
-     *
-     * - string: the values are being compared as strings. No conversion will be done before comparison.
-     * - number: the values are being compared as numbers. String values will be converted into numbers before comparison.
-     */
-    public $type = 'string';
     /**
      * @var string the operator for comparison. The following operators are supported:
      *
@@ -135,7 +121,7 @@ class DateTimeCompareValidator extends Validator
             $compareLabel = $model->getAttributeLabel($compareAttribute);
         }
 
-        if (!$this->compareValues($this->operator, $this->type, $value, $compareValue)) {
+        if (!$this->compareValues($this->operator, $value, $compareValue)) {
             $this->addError($model, $attribute, $this->message, [
                 'compareAttribute' => $compareLabel,
                 'compareValue' => $compareValue,
@@ -151,7 +137,7 @@ class DateTimeCompareValidator extends Validator
         if ($this->compareValue === null) {
             throw new InvalidConfigException('DateTimeCompareValidator::compareValue must be set.');
         }
-        if (!$this->compareValues($this->operator, $this->type, $value, $this->compareValue)) {
+        if (!$this->compareValues($this->operator, $value, $this->compareValue)) {
             return [$this->message, [
                 'compareAttribute' => $this->compareValue,
                 'compareValue' => $this->compareValue,
@@ -164,37 +150,32 @@ class DateTimeCompareValidator extends Validator
     /**
      * Compares two values with the specified operator.
      * @param string $operator the comparison operator
-     * @param string $type the type of the values being compared
      * @param mixed $value the value being compared
      * @param mixed $compareValue another value being compared
      * @return boolean whether the comparison using the specified operator is true.
      */
-    protected function compareValues($operator, $type, $value, $compareValue)
+    protected function compareValues($operator, $value, $compareValue)
     {
-        if ($type === 'number') {
-            $value = floatval($value);
-            $compareValue = floatval($compareValue);
-        } else {
-            $value = (string) $value;
-            $compareValue = (string) $compareValue;
-        }
+    	$dateValue = new \DateTime($value);
+    	$dateCompareValue = new \DateTime($compareValue);
+    	
         switch ($operator) {
             case '==':
-                return $value == $compareValue;
+                return $dateValue == $dateCompareValue;
             case '===':
                 return $value === $compareValue;
             case '!=':
-                return $value != $compareValue;
+                return $dateValue != $dateCompareValue;
             case '!==':
                 return $value !== $compareValue;
             case '>':
-                return $value > $compareValue;
+                return $dateValue > $dateCompareValue;
             case '>=':
-                return $value >= $compareValue;
+                return $dateValue >= $dateCompareValue;
             case '<':
-                return $value < $compareValue;
+                return $dateValue < $dateCompareValue;
             case '<=':
-                return $value <= $compareValue;
+                return $dateValue <= $dateCompareValue;
             default:
                 return false;
         }
@@ -206,8 +187,7 @@ class DateTimeCompareValidator extends Validator
     public function clientValidateAttribute($model, $attribute, $view)
     {
         $options = [
-            'operator' => $this->operator,
-            'type' => $this->type,
+            'operator' => $this->operator
         ];
 
         if ($this->compareValue !== null) {
@@ -229,8 +209,8 @@ class DateTimeCompareValidator extends Validator
             'compareValue' => $compareValue,
         ], Yii::$app->language);
 
-        ValidationAsset::register($view);
+        DateTimeCompareValidationAsset::register($view);
 
-        return 'yii.validation.compare(value, messages, ' . json_encode($options, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . ');';
+        return 'yii.validation.datetimecompare(value, messages, ' . json_encode($options, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . ');';
     }
 }
