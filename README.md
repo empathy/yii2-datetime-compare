@@ -7,7 +7,7 @@
 [![Monthly Downloads](https://poser.pugx.org/eanushan/yii2-datetime-compare/d/monthly.png)](https://packagist.org/packages/eanushan/yii2-datetime-compare)
 [![Daily Downloads](https://poser.pugx.org/eanushan/yii2-datetime-compare/d/daily.png)](https://packagist.org/packages/eanushan/yii2-datetime-compare)
 
-DateTime comparison validator for Yii Framework 2.0.
+DateTime comparison validator for Yii Framework 2.0. Temporary solution until this [enhancement](https://github.com/yiisoft/yii2/issues/3581) is implemented.
 
 ## [[EAnushan\validators\DateTimeCompareValidator|compare]] <span id="datetime-compare"></span>
 
