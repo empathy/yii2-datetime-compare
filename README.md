@@ -1,15 +1,15 @@
 # yii2-datetime-compare
 
-[![Latest Stable Version](https://poser.pugx.org/eanushan/yii2-datetime-compare/v/stable.svg)](https://packagist.org/packages/eanushan/yii2-datetime-compare)
-[![Latest Unstable Version](https://poser.pugx.org/eanushan/yii2-datetime-compare/v/unstable.svg)](https://packagist.org/packages/eanushan/yii2-datetime-compare)
-[![License](https://poser.pugx.org/eanushan/yii2-datetime-compare/license.svg)](https://packagist.org/packages/eanushan/yii2-datetime-compare)
-[![Total Downloads](https://poser.pugx.org/eanushan/yii2-datetime-compare/downloads.svg)](https://packagist.org/packages/eanushan/yii2-datetime-compare)
-[![Monthly Downloads](https://poser.pugx.org/eanushan/yii2-datetime-compare/d/monthly.png)](https://packagist.org/packages/eanushan/yii2-datetime-compare)
-[![Daily Downloads](https://poser.pugx.org/eanushan/yii2-datetime-compare/d/daily.png)](https://packagist.org/packages/eanushan/yii2-datetime-compare)
+[![Latest Stable Version](https://poser.pugx.org/empathy/yii2-datetime-compare/v/stable.svg)](https://packagist.org/packages/empathy/yii2-datetime-compare)
+[![Latest Unstable Version](https://poser.pugx.org/empathy/yii2-datetime-compare/v/unstable.svg)](https://packagist.org/packages/empathy/yii2-datetime-compare)
+[![License](https://poser.pugx.org/empathy/yii2-datetime-compare/license.svg)](https://packagist.org/packages/empathy/yii2-datetime-compare)
+[![Total Downloads](https://poser.pugx.org/empathy/yii2-datetime-compare/downloads.svg)](https://packagist.org/packages/empathy/yii2-datetime-compare)
+[![Monthly Downloads](https://poser.pugx.org/empathy/yii2-datetime-compare/d/monthly.png)](https://packagist.org/packages/empathy/yii2-datetime-compare)
+[![Daily Downloads](https://poser.pugx.org/empathy/yii2-datetime-compare/d/daily.png)](https://packagist.org/packages/empathy/yii2-datetime-compare)
 
 DateTime comparison validator for Yii Framework 2.0. Temporary solution until this [enhancement](https://github.com/yiisoft/yii2/issues/3581) is implemented.
 
-## [[EAnushan\validators\DateTimeCompareValidator|compare]] <span id="datetime-compare"></span>
+## [[Empathy\Validators\DateTimeCompareValidator|compare]] <span id="datetime-compare"></span>
 
 ```php
 [
@@ -48,18 +48,18 @@ is as specified by the `operator` property.
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
-> Note: Check the [composer.json](https://github.com/EAnushan/yii2-datetime-compare/blob/master/composer.json) for this extension's requirements and dependencies. 
+> Note: Check the [composer.json](https://github.com/empathy/yii2-datetime-compare/blob/master/composer.json) for this extension's requirements and dependencies. 
 
 Either run
 
 ```
-$ php composer.phar require EAnushan/yii2-datetime-compare "*"
+$ php composer.phar require empathy/yii2-datetime-compare "*"
 ```
 
 or add
 
 ```
-"EAnushan/yii2-datetime-compare": "*"
+"empathy/yii2-datetime-compare": "*"
 ```
 
 to the ```require``` section of your `composer.json` file.

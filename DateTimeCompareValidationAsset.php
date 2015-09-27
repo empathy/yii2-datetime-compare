@@ -1,5 +1,5 @@
 <?php
-namespace EAnushan\validators;
+namespace Empathy\Validators;
 
 use yii\web\AssetBundle;
 
@@ -11,7 +11,7 @@ use yii\web\AssetBundle;
  */
 class DateTimeCompareValidationAsset extends AssetBundle
 {
-    public $sourcePath = '@EAnushan/validators/assets';
+    public $sourcePath = '@Empathy/Validators/assets';
     public $js = [
         'js/datetimecompare.validation.js',
     ];

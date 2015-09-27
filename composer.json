@@ -1,8 +1,8 @@
 {
-    "name": "eanushan/yii2-datetime-compare",
+    "name": "empathy/yii2-datetime-compare",
     "description": "DateTime comparison validator",
     "keywords": ["yii2", "extension", "widget", "form", "datetime", "plugin"],
-    "homepage": "https://github.com/EAnushan/yii2-datetime-compare",
+    "homepage": "https://github.com/empathy/yii2-datetime-compare",
     "type": "yii2-extension",
     "license": "BSD 3-Clause",
     "authors": [
@@ -14,7 +14,7 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "EAnushan\\validators\\": ""
+            "Empathy\\Validators\\": ""
         }
     }
 }

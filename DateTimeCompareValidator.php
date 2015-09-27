@@ -1,5 +1,5 @@
 <?php
-namespace EAnushan\validators;
+namespace Empathy\Validators;
 
 use Yii;
 use yii\base\InvalidConfigException;
