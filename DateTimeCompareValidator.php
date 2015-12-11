@@ -62,7 +62,11 @@ class DateTimeCompareValidator extends Validator
      * - `{compareAttribute}`: the label of the attribute to be compared with
      */
     public $message;
-
+    /**
+     *
+     * @var string with date format according to DateTime::createFromFormat specifiaction.
+     */
+    public $format = 'd-m-Y';
 
     /**
      * @inheritdoc
@@ -121,7 +125,7 @@ class DateTimeCompareValidator extends Validator
             $compareLabel = $model->getAttributeLabel($compareAttribute);
         }
 
-        if (!$this->compareValues($this->operator, $value, $compareValue)) {
+        if (!$this->compareValues($this->operator, $value, $compareValue,$this->format)) {
             $this->addError($model, $attribute, $this->message, [
                 'compareAttribute' => $compareLabel,
                 'compareValue' => $compareValue,
@@ -137,7 +141,7 @@ class DateTimeCompareValidator extends Validator
         if ($this->compareValue === null) {
             throw new InvalidConfigException('DateTimeCompareValidator::compareValue must be set.');
         }
-        if (!$this->compareValues($this->operator, $value, $this->compareValue)) {
+        if (!$this->compareValues($this->operator, $value, $this->compareValue$this->format)) {
             return [$this->message, [
                 'compareAttribute' => $this->compareValue,
                 'compareValue' => $this->compareValue,
@@ -152,12 +156,13 @@ class DateTimeCompareValidator extends Validator
      * @param string $operator the comparison operator
      * @param mixed $value the value being compared
      * @param mixed $compareValue another value being compared
+     * @params string $format the date format to use
      * @return boolean whether the comparison using the specified operator is true.
      */
-    protected function compareValues($operator, $value, $compareValue)
+    protected function compareValues($operator, $value, $compareValue,$format)
     {
-    	$dateValue = new \DateTime($value);
-    	$dateCompareValue = new \DateTime($compareValue);
+    	$dateValue = \DateTime::createFromFormat($format, $value);
+        $dateCompareValue = \DateTime::createFromFormat($format, $compareValue);
     	
         switch ($operator) {
             case '==':
