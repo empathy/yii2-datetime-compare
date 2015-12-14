@@ -64,7 +64,6 @@ class DateTimeCompareValidator extends Validator
     public $message;
     /**
      * @var string Date format according to DateTime::createFromFormat specification.
-     *
      */
     public $format;
 
