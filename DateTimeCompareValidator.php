@@ -160,7 +160,7 @@ class DateTimeCompareValidator extends Validator
      */
     protected function compareValues($operator, $value, $compareValue, $format)
     {
-    	$dateValue = empty($format) ? \DateTime::createFromFormat($format, $value) : new \DateTime($value);
+        $dateValue = empty($format) ? \DateTime::createFromFormat($format, $value) : new \DateTime($value);
         $dateCompareValue = empty($format) ? \DateTime::createFromFormat($format, $compareValue) : new \DateTime($compareValue);
     	
         switch ($operator) {
