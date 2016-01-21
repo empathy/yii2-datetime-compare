@@ -20,7 +20,7 @@ DateTime comparison validator for Yii Framework 2.0. Temporary solution until th
     ['birthday', DateTimeCompareValidator::className(), 'compareValue' => date('Y-m-d H:i:s'), 'operator' => '<='],
     
     // validates if birthday is less than driver's license expiry
-    ['birthday', DateTimeCompareValidator::className(), 'compareAttribute' => 'driver_license_expiry, 'operator' => '<'],
+    ['birthday', DateTimeCompareValidator::className(), 'compareAttribute' => 'driver_license_expiry', 'operator' => '<'],
 ]
 ```
 
