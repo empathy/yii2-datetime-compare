@@ -66,6 +66,10 @@ class DateTimeCompareValidator extends Validator
      * @var string Date format according to DateTime::createFromFormat specification.
      */
     public $format;
+    /**
+     * @var string Date format supported by moment.js. See http://momentjs.com/docs/#/parsing/string-format/
+     */
+    public $jsFormat;
 
     /**
      * @inheritdoc
@@ -211,6 +215,10 @@ class DateTimeCompareValidator extends Validator
             'compareAttribute' => $compareValue,
             'compareValue' => $compareValue,
         ], Yii::$app->language);
+
+        if(!empty($this->jsFormat)) {
+            $options['format'] = $this->jsFormat;
+        }
 
         DateTimeCompareValidationAsset::register($view);
 

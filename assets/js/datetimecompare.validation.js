@@ -21,9 +21,9 @@ $.extend(yii.validation, (function ($) {
                 compareValue = $('#' + options.compareAttribute).val();
             }
 
-            var dateValue = (new Date(value)).getTime();
-            var dateCompareValue = (new Date(compareValue)).getTime();
-            
+            var dateValue = $.inArray('format', options) === -1 ? moment(value).unix() : moment(value, options['format']).unix();
+            var dateCompareValue = $.inArray('format', options) === -1 ? moment(compareValue).unix() : moment(compareValue, options['format']).unix();
+
             switch (options.operator) {
                 case '==':
                     valid = dateValue == dateCompareValue;
