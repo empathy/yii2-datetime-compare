@@ -44,6 +44,7 @@ is as specified by the `operator` property.
      * `<`: check if value being validated is less than the value being compared with.
      * `<=`: check if value being validated is less than or equal to the value being compared with.
 - `format`: Date format to parse values with. If blank, PHP Date will try and guess your format.
+- `jsFormat`: Date format to parse values with client side. If blank, JavaScript Date will try and guess your format.
 
 ## Installation
 
