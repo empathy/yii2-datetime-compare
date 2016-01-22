@@ -52,16 +52,8 @@ The preferred way to install this extension is through [composer](http://getcomp
 
 > Note: Check the [composer.json](https://github.com/empathy/yii2-datetime-compare/blob/master/composer.json) for this extension's requirements and dependencies. 
 
-Either run
+Run
 
 ```
-$ php composer.phar require empathy/yii2-datetime-compare "*"
+$ composer require empathy/yii2-datetime-compare
 ```
-
-or add
-
-```
-"empathy/yii2-datetime-compare": "*"
-```
-
-to the ```require``` section of your `composer.json` file.
